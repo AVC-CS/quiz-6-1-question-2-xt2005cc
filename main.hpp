@@ -35,8 +35,24 @@ int writeFile()
 
 int readFile()
 {
-    ifstream file("employee.txt");
-    file >> numEmployees;
+    ifstream ifs;
+    ifs.open("employee.txt");
+    if (!ifs)
+    {
+        cout << "Error";
+        exit(0);
+    }
 
-    cout << "ID\tName\t"
+    int N;
+    ifs >> N;
+
+    cout << "ID\tName\tDepartment\tSalary" << endl;
+
+    double totalSalary = 0;
+
+    for (int i = 0; i < N; i++)
+    {
+        int id, salary;
+        string name, department;
+    }
 }
