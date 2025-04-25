@@ -54,5 +54,14 @@ int readFile()
     {
         int id, salary;
         string name, department;
+        ifs >> id >> name >> department >> salary;
+
+        cout << id << "\t" << name << "\t" << department << "\t" << salary << endl;
+        totalSalary += salary;
     }
+    double averageSalary = totalSalary / N;
+
+    cout << "Total: " << totalSalary << " Average: " << averageSalary << endl;
+    ifs.close();
+    return N;
 }
