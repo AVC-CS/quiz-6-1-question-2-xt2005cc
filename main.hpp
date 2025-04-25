@@ -2,10 +2,10 @@
 #include <fstream>
 using namespace std;
 
-int writeFile()
+int writeFile(string filename)
 {
     ofstream ofs;
-    ofs.open("employee.txt");
+    ofs.open(filename);
     if (!ofs)
     {
         cout << "File Open Error.";
@@ -13,7 +13,7 @@ int writeFile()
     }
 
     int N;
-    cout << "Enter number of employees: ":
+    cout << "Enter number of employees: ";
     cin >> N;
     ofs << N << endl;
 
@@ -33,10 +33,10 @@ int writeFile()
 
 
 
-int readFile()
+int readFile(string filename)
 {
     ifstream ifs;
-    ifs.open("employee.txt");
+    ifs.open(filename);
     if (!ifs)
     {
         cout << "Error";
