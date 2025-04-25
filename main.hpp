@@ -4,25 +4,39 @@ using namespace std;
 
 int writeFile()
 {
-    ofstream file("employee.txt");
-    int numEmployees;
-    cout << "Enter number of employees: ";
-    cin >> numEmployees;
-
-    file << numEmployees << endl;
-
-    for (int i = 0; i < numEmployees; i++)
+    ofstream ofs;
+    ofs.open("employee.txt");
+    if (!ofs)
     {
-        int id;
-        string name, department;
-        double salary;
-
-        cout << "Enter ID, Name, Department, and Salary: "
-        cin >> id >> name> >> department >> salary;
-
-        file << id << " " << name << " " << department << " " << salary << endl;
+        cout << "File Open Error.";
+        exit(0);
     }
 
-    file.close();
-    return numEmployees;
+    int N;
+    cout << "Enter number of employees: ":
+    cin >> N;
+    ofs << N << endl;
+
+    for(int i = 0; i < N; i++)
+    {
+        int id, salary;
+        string name, department;
+        cout << "Enter ID, Name, Department, and Salary: ";
+        cin >> id >> name >> department >> salary;
+
+        ofs << id << " " << name << " " << department << " " << salary << endl;
+    }
+    ofs.close();
+    return N;
+}
+
+
+
+
+int readFile()
+{
+    ifstream file("employee.txt");
+    file >> numEmployees;
+
+    cout << "ID\tName\t"
 }
